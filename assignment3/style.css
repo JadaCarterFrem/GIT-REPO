@@ -1,0 +1,23 @@
+/* External CSS (Chapter 10) */
+
+/* Body Styles (Chapter 12) */
+body {
+    font-family: Arial, sans-serif;  /* Chapter 12 (p. 264): Font-family applied here */
+    background-color: #f4f4f4;      /* Chapter 11 (p. 246): Background color */
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  /* Header (h1) Styles (Chapter 11) */
+  h1 {
+    color: darkblue;  /* Chapter 11 (p. 246): Color applied to h1 */
+  }
+  
+  /* Footer Styles (Chapter 12) */
+  footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: gray;
+    text-align: center;
+  }
+  
