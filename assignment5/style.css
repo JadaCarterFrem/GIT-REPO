@@ -1,4 +1,4 @@
-/* Reset default styles */
+/* Reset default margin, padding, and box-sizing */
 * {
     margin: 0;
     padding: 0;
@@ -11,39 +11,34 @@ body {
     padding: 20px;
 }
 
-/* Navigation Bar */
+/* Navigation Bar using Flexbox */
 nav {
     display: flex;
     justify-content: center;
-    gap: 20px;
     background-color: #333;
-    padding: 15px;
+    padding: 10px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    padding: 10px 15px;
+    margin: 0 10px;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: #555;
+    border-radius: 5px;
 }
 
-/* Page Title */
-h1 {
-    margin: 20px 0;
-}
-
-/* Main Content Grid */
+/* Grid Layout for Main Content */
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     gap: 15px;
-    padding: 20px;
+    margin-top: 20px;
 }
 
-/* Box Styling */
 .box {
     background-color: lightblue;
     padding: 20px;
@@ -52,25 +47,18 @@ h1 {
     text-align: left;
 }
 
-/* Section Headers */
-h2 {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* List Styling */
-ul {
-    margin-left: 20px;
-}
-
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr; /* Stack in a single column */
+        grid-template-columns: 1fr; /* Single-column layout */
     }
-    
+
     nav {
         flex-direction: column;
         align-items: center;
+    }
+
+    nav a {
+        margin: 5px 0;
     }
 }
