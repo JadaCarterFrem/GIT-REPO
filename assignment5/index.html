@@ -49,11 +49,14 @@
             display: flex;
             max-width: 1200px;
             margin: 20px auto;
+            background-color: #ffeb3b; /* Main content box color */
+            padding: 20px;
+            border-radius: 10px;
         }
 
         .sidebar {
             width: 250px;
-            background-color: #ddd;
+            background-color: #f0f0f0; /* Sidebar box color */
             padding: 20px;
             border-radius: 10px;
             text-align: left;
@@ -68,7 +71,7 @@
         }
 
         .box {
-            background-color: white;
+            background-color: #ffffff; /* Content box color */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
@@ -77,12 +80,13 @@
 
         /* Footer */
         footer {
-            background-color: #333;
+            background-color: #333; /* Footer box color */
             color: white;
             text-align: center;
             padding: 15px;
             margin-top: 20px;
             width: 100%;
+            border-radius: 10px;
         }
 
         @media (max-width: 768px) {
@@ -113,17 +117,15 @@
     <h1>My Top 3 Physical Media Formats</h1>
 
     <div class="main-content">
-       
-       <!-- Sidebar -->
-<aside class="sidebar" style="float: right; background-color: #f0f0f0; padding: 20px; width: 250px; border-radius: 8px;">
-    <h2 style="color: #333;">More Content</h2>
-    <ul>
-        <li><a href="#" style="color: #007bff; text-decoration: none;">Why Physical Media Still Matters</a></li>
-        <li><a href="#" style="color: #007bff; text-decoration: none;">Best Places to Buy Vinyl</a></li>
-        <li><a href="#" style="color: #007bff; text-decoration: none;">How to Care for Your CDs</a></li>
-    </ul>
-</aside>
-
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>More Content</h2>
+            <ul>
+                <li><a href="#" style="color: #007bff; text-decoration: none;">Why Physical Media Still Matters</a></li>
+                <li><a href="#" style="color: #007bff; text-decoration: none;">Best Places to Buy Vinyl</a></li>
+                <li><a href="#" style="color: #007bff; text-decoration: none;">How to Care for Your CDs</a></li>
+            </ul>
+        </aside>
 
         <div class="container">
             <!-- Vinyl Section -->
