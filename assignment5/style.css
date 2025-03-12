@@ -1,29 +1,32 @@
-/* Reset default margin, padding, and box-sizing */
+/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     text-align: center;
     padding: 20px;
 }
 
-/* Navigation Bar using Flexbox */
+/* Navigation Bar */
 nav {
     display: flex;
     justify-content: center;
     background-color: #333;
-    padding: 10px;
+    padding: 15px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
     margin: 0 10px;
+    font-size: 16px;
 }
 
 nav a:hover {
@@ -31,26 +34,51 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* Grid Layout for Main Content */
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    gap: 15px;
-    margin-top: 20px;
+/* Page Title */
+h1 {
+    margin: 20px 0;
+    font-size: 28px;
+    color: #333;
 }
 
+/* Grid Layout */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+/* Individual Boxes */
 .box {
-    background-color: lightblue;
+    background-color: white;
     padding: 20px;
-    border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
 }
 
-/* Responsive Design for Mobile */
+h2 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 10px;
+    color: #555;
+}
+
+ul {
+    margin-left: 20px;
+    color: #444;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr; /* Single-column layout */
+        grid-template-columns: 1fr;
     }
 
     nav {
@@ -61,4 +89,13 @@ nav a:hover {
     nav a {
         margin: 5px 0;
     }
+}
+.content-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
 }
