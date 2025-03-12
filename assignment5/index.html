@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +17,9 @@
             background-color: #f4f4f4;
             text-align: center;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Navigation Bar */
@@ -26,6 +28,7 @@
             justify-content: center;
             background-color: #333;
             padding: 15px;
+            width: 100%;
         }
 
         nav a {
@@ -41,23 +44,29 @@
             border-radius: 5px;
         }
 
-        /* Page Title */
-        h1 {
-            margin: 20px 0;
-            font-size: 28px;
-            color: #333;
+        /* Layout */
+        .main-content {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
         }
 
-        /* Grid Layout */
+        .sidebar {
+            width: 250px;
+            background-color: #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
         .container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            max-width: 1000px;
-            margin: 20px auto;
+            max-width: 750px;
+            margin-left: 20px;
         }
 
-        /* Individual Boxes */
         .box {
             background-color: white;
             padding: 20px;
@@ -66,41 +75,33 @@
             text-align: left;
         }
 
-        h2 {
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
             text-align: center;
-            color: #222;
-            margin-bottom: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            width: 100%;
         }
 
-        h3 {
-            margin-top: 10px;
-            color: #555;
-        }
-
-        ul {
-            margin-left: 20px;
-            color: #444;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
+            .main-content {
                 flex-direction: column;
                 align-items: center;
             }
-
-            nav a {
-                margin: 5px 0;
+            .sidebar {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .container {
+                grid-template-columns: 1fr;
+                margin-left: 0;
             }
         }
     </style>
 </head>
 <body>
-
     <!-- Navigation Bar -->
     <nav>
         <a href="index.html">Home</a>
@@ -111,62 +112,77 @@
 
     <h1>My Top 3 Physical Media Formats</h1>
 
-    <div class="container">
-        <!-- Vinyl Section -->
-        <div class="box">
-            <h2>Vinyls</h2>
-            <p>Vinyl records have made a huge comeback in recent years, offering a unique and nostalgic way to experience music.</p>
-            <h3>Pros:</h3>
+    <div class="main-content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>More Content</h2>
             <ul>
-                <li>High-quality analog sound</li>
-                <li>Collectible and aesthetically pleasing</li>
-                <li>Large album artwork</li>
+                <li><a href="#">Why Physical Media Still Matters</a></li>
+                <li><a href="#">Best Places to Buy Vinyl</a></li>
+                <li><a href="#">How to Care for Your CDs</a></li>
             </ul>
-            <h3>Cons:</h3>
-            <ul>
-                <li>Expensive compared to digital formats</li>
-                <li>Fragile and prone to scratches</li>
-                <li>Bulky storage</li>
-            </ul>
-        </div>
+        </aside>
 
-        <!-- CDs Section -->
-        <div class="box">
-            <h2>CDs</h2>
-            <p>Compact discs (CDs) offer a balance between physical and digital media, with high-quality sound and wide availability.</p>
-            <h3>Pros:</h3>
-            <ul>
-                <li>Affordable and easy to find</li>
-                <li>Great sound quality for digital audio</li>
-                <li>They are all over thrift stores</li>
-            </ul>
-            <h3>Cons:</h3>
-            <ul>
-                <li>Can be scratched, affecting playback</li>
-                <li>Not as visually appealing as vinyl</li>
-                <li>Requires a CD player</li>
-            </ul>
-        </div>
+        <div class="container">
+            <!-- Vinyl Section -->
+            <div class="box">
+                <h2>Vinyls</h2>
+                <p>Vinyl records have made a huge comeback in recent years, offering a unique and nostalgic way to experience music.</p>
+                <h3>Pros:</h3>
+                <ul>
+                    <li>High-quality analog sound</li>
+                    <li>Collectible and aesthetically pleasing</li>
+                    <li>Large album artwork</li>
+                </ul>
+                <h3>Cons:</h3>
+                <ul>
+                    <li>Expensive compared to digital formats</li>
+                    <li>Fragile and prone to scratches</li>
+                    <li>Bulky storage</li>
+                </ul>
+            </div>
 
-        <!-- Steelbooks Section -->
-        <div class="box">
-            <h2>Steelbooks</h2>
-            <p>Steelbooks are collectible editions of movies and video games, featuring unique metal cases.</p>
-            <h3>Pros:</h3>
-            <ul>
-                <li>Durable and protective casing</li>
-                <li>Limited edition designs</li>
-                <li>Great for collectors</li>
-            </ul>
-            <h3>Cons:</h3>
-            <ul>
-                <li>More expensive than standard editions</li>
-                <li>Can get dented easily</li>
-                <li>Not always available for all media</li>
-            </ul>
+            <!-- CDs Section -->
+            <div class="box">
+                <h2>CDs</h2>
+                <p>Compact discs (CDs) offer a balance between physical and digital media, with high-quality sound and wide availability.</p>
+                <h3>Pros:</h3>
+                <ul>
+                    <li>Affordable and easy to find</li>
+                    <li>Great sound quality for digital audio</li>
+                    <li>They are all over thrift stores</li>
+                </ul>
+                <h3>Cons:</h3>
+                <ul>
+                    <li>Can be scratched, affecting playback</li>
+                    <li>Not as visually appealing as vinyl</li>
+                    <li>Requires a CD player</li>
+                </ul>
+            </div>
+
+            <!-- Steelbooks Section -->
+            <div class="box">
+                <h2>Steelbooks</h2>
+                <p>Steelbooks are collectible editions of movies and video games, featuring unique metal cases.</p>
+                <h3>Pros:</h3>
+                <ul>
+                    <li>Durable and protective casing</li>
+                    <li>Limited edition designs</li>
+                    <li>Great for collectors</li>
+                </ul>
+                <h3>Cons:</h3>
+                <ul>
+                    <li>More expensive than standard editions</li>
+                    <li>Can get dented easily</li>
+                    <li>Not always available for all media</li>
+                </ul>
+            </div>
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 My Media Collection. All rights reserved.</p>
+    </footer>
 </body>
 </html>
-
