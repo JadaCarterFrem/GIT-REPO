@@ -1,0 +1,85 @@
+/* Default light mode styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: white;
+    color: black;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Dark mode styles (will be applied via JavaScript) */
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 15px;
+    width: 100%;
+    transition: background-color 0.5s;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+nav a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Dark mode adjustments for navigation */
+.dark-mode nav {
+    background-color: #222;
+}
+
+.dark-mode nav a {
+    color: #ddd;
+}
+
+.dark-mode nav a:hover {
+    background-color: #444;
+}
+
+/* Media Queries for Mobile and Smaller Screens */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+    }
+
+    .box {
+        margin-bottom: 20px; /* Add margin to ensure space between boxes */
+    }
+
+    /* Stacking navigation links on smaller screens */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 10px 0; /* Stack navigation links with vertical space */
+    }
+}
