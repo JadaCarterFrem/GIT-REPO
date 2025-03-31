@@ -21,6 +21,4 @@ function changeTheme() {
     if (body.classList.contains('dark-mode')) {
         button.textContent = "Toggle Light Mode";
     } else {
-        button.textContent = "Toggle Dark Mode";
-    }
-}
+        but
