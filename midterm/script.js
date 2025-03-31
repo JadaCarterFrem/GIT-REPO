@@ -25,7 +25,6 @@ function changeTheme() {
         localStorage.setItem('theme', 'light');
     }
 }
-
 // Check localStorage for theme preference and apply it on page load
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
