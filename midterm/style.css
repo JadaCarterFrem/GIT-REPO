@@ -119,11 +119,11 @@ footer {
     border-radius: 10px;
 }
 
+/* Adjust image size and centering */
 .styled-image {
-    width: 25%; /* Makes the image 25% of the viewport width */
-    max-width: 300px; /* Limits how big it can get */
-    display: block; /* Centers the image */
-    margin: 20px auto; /* Adds spacing and centers it */
+    width: min(25vw, 300px); /* Ensures image is a quarter of the viewport but never exceeds 300px */
+    display: block;
+    margin: 20px auto;
 }
 
 /* Media Queries */
@@ -151,4 +151,3 @@ footer {
         max-width: 280px;
     }
 }
-
