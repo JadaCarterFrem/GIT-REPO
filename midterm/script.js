@@ -16,4 +16,4 @@ document.body.style.backgroundColor = userInfo.selectedColor;
 
 // Console check for debugging
 console.log("The first color in the array is:", colors[0]); // should output grey HEX
-console.log("User Info:", userInfo);
+console.log("User Info:", userI

@@ -1,79 +1,96 @@
-/* Global Styles */
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f7f0ff; /* Light pastel background */
-    color: #333;
-    transition: background-color 0.5s ease;
-}
-
-/* Header */
-header {
-    background-color: #dcbfff; /* Soft pastel purple */
-    padding: 20px;
+    font-family: Arial, sans-serif;
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Navigation */
+/* Light Mode Styles */
+.light-mode {
+    background-color: #B3DFFC; /* Light blue background */
+    color: #333;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Navigation Bar */
 nav {
     display: flex;
     justify-content: center;
-    background-color: #bfa7ff; /* Slightly darker purple */
-    padding: 10px;
+    background-color: #333;
+    padding: 15px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: #555;
+    border-radius: 5px;
 }
 
-/* Content Layout */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px;
+/* Header */
+header {
+    margin-top: 50px;
 }
 
-/* Images */
-img {
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    margin: 20px 0;
+h1 {
+    font-size: 4rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+/* Button for Theme Toggle */
+.theme-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #dcbfff;
+    background-color: #d1c4e9;
     color: white;
+    text-align: center;
+    padding: 15px;
     margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    body { font-size: 18px; }
-}
-
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    body { font-size: 16px; padding: 10px; }
-    nav { flex-direction: column; }
-}
+    body {
+        font-size: 16px;
+    }
 
-@media (max-width: 480px) {
-    body { font-size: 14px; }
-    nav a { font-size: 16px; margin: 5px 0; }
+    h1 {
+        font-size: 3rem;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
 }
