@@ -43,77 +43,42 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* Dark mode adjustments for navigation */
-.dark-mode nav {
-    background-color: #222;
+/* Header Styling */
+header {
+    margin-top: 50px;
+    text-align: center;
 }
 
-.dark-mode nav a {
-    color: #ddd;
-}
-
-.dark-mode nav a:hover {
-    background-color: #444;
-}
-
-/* Main content area */
-.main-content {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-h1 {
-    font-size: 4rem;
-    color: #ff1493;  /* Deep pink for contrast */
+/* Make BLOOM larger and center it */
+header h1 {
+    font-size: 6rem; /* Larger size for BLOOM */
+    color: #ff1493;  /* Deep pink */
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
 
-h2 {
-    font-size: 2rem;
+/* Make the tagline centered and smaller */
+header p {
+    font-size: 1.5rem;
     color: #4682b4;  /* Steel blue */
     margin-top: 10px;
 }
 
-/* Boxes for content */
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 20px;
+/* Theme Toggle Button */
+.theme-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
 }
 
-.box {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Sidebar style */
-.sidebar {
-    width: 300px;
-    background-color: #e0f7fa; /* Light cyan */
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-/* Footer */
+/* Footer Styling */
 footer {
     background-color: #d1c4e9;
     color: white;
@@ -126,46 +91,16 @@ footer {
 
 /* Media Queries for Mobile and Smaller Screens */
 @media (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
-        padding: 10px;
+    header h1 {
+        font-size: 4rem;  /* Smaller on mobile */
     }
 
-    .container {
-        grid-template-columns: 1fr;
+    header p {
+        font-size: 1.2rem;
     }
 
-    .sidebar {
-        width: 100%;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        margin: 10px 0;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-
-    .box {
+    .theme-button {
         font-size: 14px;
-        padding: 15px;
+        padding: 8px 16px;
     }
 }
