@@ -135,3 +135,8 @@ footer {
         padding: 8px 16px;
     }
 }
+.styled-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
