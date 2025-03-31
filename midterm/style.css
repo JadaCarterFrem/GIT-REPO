@@ -105,3 +105,23 @@ footer {
         padding: 8px 16px;
     }
 }
+
+
+/* Default light mode styles */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #f0f8ff;  /* Light blue */
+    color: #333;
+    transition: background-color 0.5s, color 0.5s;
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
