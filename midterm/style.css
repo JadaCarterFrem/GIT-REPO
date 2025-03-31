@@ -64,6 +64,7 @@ header p {
     font-size: 1.5rem;
     color: #4682b4;  /* Steel blue */
     margin-top: 10px;
+    text-align: center; /* Ensure tagline is centered */
 }
 
 /* Theme Toggle Button */
