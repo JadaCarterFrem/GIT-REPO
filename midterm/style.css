@@ -119,6 +119,13 @@ footer {
     border-radius: 10px;
 }
 
+.styled-image {
+    width: 25%; /* Makes the image 25% of the viewport width */
+    max-width: 300px; /* Limits how big it can get */
+    display: block; /* Centers the image */
+    margin: 20px auto; /* Adds spacing and centers it */
+}
+
 /* Media Queries */
 
 /* Small Screens (max-width: 480px) */
