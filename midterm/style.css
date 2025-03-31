@@ -68,39 +68,4 @@ header p {
 
 /* Theme Toggle Button */
 .theme-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
-}
-
-/* Footer Styling */
-footer {
-    background-color: #d1c4e9;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* Media Queries for Mobile and Smaller Screens */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 4rem;  /* Smaller on mobile */
-    }
-
-    header p {
-        font-size: 1.2rem;
-    }
-
-    .theme-button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
+    
