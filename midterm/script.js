@@ -12,5 +12,15 @@ askHowAreYou();
 // Function to toggle between light and dark mode
 function changeTheme() {
     const body = document.body;
+    const button = document.querySelector('.theme-button');
+    
+    // Toggle dark mode class
     body.classList.toggle('dark-mode');
+    
+    // Change the button text based on the theme
+    if (body.classList.contains('dark-mode')) {
+        button.textContent = "Toggle Light Mode";
+    } else {
+        button.textContent = "Toggle Dark Mode";
+    }
 }
