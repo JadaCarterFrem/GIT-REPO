@@ -123,60 +123,25 @@ footer {
 
 /* Small Screens (max-width: 480px) */
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 3rem;
-    }
-    header p {
-        font-size: 1rem;
-    }
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
     .styled-image {
         width: 90%;
-        max-width: 250px;
-        height: auto;
+        max-width: 200px;
     }
 }
 
 /* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    .main-content {
-        padding: 10px;
-    }
-    header h1 {
-        font-size: 3.5rem;
-    }
-    header {
-        margin-top: 20px;
-    }
     .styled-image {
-        width: 80%;
-        max-width: 300px;
-        height: auto;
-        margin: 20px auto;
+        width: 75%;
+        max-width: 250px;
     }
 }
 
 /* Laptops (max-width: 1024px) */
 @media (max-width: 1024px) {
-    nav {
-        padding: 10px;
-    }
-    header h1 {
-        font-size: 4.5rem;
-    }
     .styled-image {
-        width: 70%;
-        max-width: 350px;
-        height: auto;
+        width: 60%;
+        max-width: 280px;
     }
 }
+
