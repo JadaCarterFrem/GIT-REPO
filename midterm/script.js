@@ -1,15 +1,14 @@
 
 // Display a message in the browser console
-console.log("CSS + JavaScript is powerful!");
+console.log("Welcome to Bloom by Jada!");
 
 // Show an alert message when the page loads (only once per session)
 document.addEventListener("DOMContentLoaded", function () {
     if (!sessionStorage.getItem("alertShown")) {
-        alert("Welcome to Bloom by Jada!");
+        alert("Welcome to Assignment 5 with JavaScript!");
         sessionStorage.setItem("alertShown", "true");
     }
 });
-
 
 // Function to toggle between light and dark mode
 function changeTheme() {
@@ -34,4 +33,3 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add(savedTheme);  // Apply saved theme
     }
 });
-
