@@ -5,7 +5,7 @@ console.log("Welcome to Bloom by Jada!");
 // Show an alert message when the page loads (only once per session)
 document.addEventListener("DOMContentLoaded", function () {
     if (!sessionStorage.getItem("alertShown")) {
-        alert("Welcome to Assignment 5 with JavaScript!");
+        alert("Welcome to Bloom by Jada!");
         sessionStorage.setItem("alertShown", "true");
     }
 });
