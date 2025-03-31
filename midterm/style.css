@@ -162,13 +162,15 @@ footer {
         font-size: 3rem;  /* Make header text smaller */
     }
 
-    header p {
-        font-size: 1.2rem;  /* Adjust tagline text size */
+    header {
+        margin-top: 20px;  /* Add some space to the top to prevent overlap */
     }
-    
+
     .styled-image {
         width: 100%;  /* Make the image responsive */
-        max-width: 300px;  /* Set a max width */
+        max-width: 300px;  /* Limit the max width */
+        margin: 20px auto;  /* Center and give some space around the image */
     }
 }
+
 
