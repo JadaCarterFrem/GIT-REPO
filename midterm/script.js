@@ -19,4 +19,17 @@ function changeTheme() {
     body.classList.toggle('dark-mode');
 
     // Optionally, you can store the user's theme preference in localStorage
-  
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Check localStorage for theme preference and apply it on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.body.classList.add(savedTheme);  // Apply saved theme
+    }
+});
