@@ -70,4 +70,105 @@ nav a {
 
 /* Header Styling */
 header {
-    margin-top: 80px; /* Adjust for f
+    margin-top: 80px; /* Adjust for fixed nav bar */
+    text-align: center;
+}
+
+/* Make BLOOM larger and center it */
+header h1 {
+    font-size: 6rem; /* Larger size for BLOOM */
+    color: #ff97c2;  /* Soft pastel pink */
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Make the tagline centered and smaller */
+header p {
+    font-size: 1.5rem;
+    color: #4f6d7a;  /* Muted slate blue */
+    margin-top: 10px;
+    text-align: center; /* Ensure tagline is centered */
+}
+
+/* Theme Toggle Button */
+.theme-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #f4b6e1;  /* Soft pastel pink */
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.theme-button:hover {
+    background-color: #d58aaf;  /* Darker pastel pink */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #e1d0f0;  /* Soft pastel lavender */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Media Queries for Mobile and Smaller Screens */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 4rem;  /* Smaller on mobile */
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    .theme-button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+.styled-image {
+    width: 400px;  /* Increased width */
+    height: auto;  /* Maintain aspect ratio */
+    border-radius: 10px;  /* Optional: rounded corners */
+    display: block;
+    margin: 0 auto;  /* Center the image horizontally */
+}
+
+/* Adjust layout for mobile screens */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;  /* Reduce padding on smaller screens */
+    }
+
+    nav {
+        flex-direction: column;  /* Stack nav items vertically */
+        align-items: center;  /* Center align the links */
+    }
+
+    .main-content {
+        padding: 10px;  /* Reduce padding for better spacing */
+    }
+
+    header h1 {
+        font-size: 3rem;  /* Make header text smaller */
+    }
+
+    header p {
+        font-size: 1.2rem;  /* Adjust tagline text size */
+    }
+    
+    .styled-image {
+        width: 100%;  /* Make the image responsive */
+        max-width: 300px;  /* Set a max width */
+    }
+}
+
