@@ -8,3 +8,9 @@ function askHowAreYou() {
 
 // Call the function when the page loads
 askHowAreYou();
+
+// Function to toggle between light and dark mode
+function changeTheme() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+}
