@@ -67,7 +67,6 @@ nav a {
     font-size: 16px;
 }
 
-
 /* Header Styling */
 header {
     margin-top: 80px; /* Adjust for fixed nav bar */
@@ -120,57 +119,61 @@ footer {
     border-radius: 10px;
 }
 
-/* Media Queries for Mobile and Smaller Screens */
-@media (max-width: 768px) {
+/* Media Queries */
+
+/* Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
     header h1 {
-        font-size: 4rem;  /* Smaller on mobile */
+        font-size: 3rem;
     }
-
     header p {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
-
-    .theme-button {
-        font-size: 12px;
-        padding: 8px 16px;
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .styled-image {
+        width: 90%;
+        max-width: 250px;
     }
 }
-.styled-image {
-    width: 400px;  /* Increased width */
-    height: auto;  /* Maintain aspect ratio */
-    border-radius: 10px;  /* Optional: rounded corners */
-    display: block;
-    margin: 0 auto;  /* Center the image horizontally */
-}
 
-/* Adjust layout for mobile screens */
+/* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
     body {
-        padding: 10px;  /* Reduce padding on smaller screens */
+        padding: 10px;
     }
-
     nav {
-        flex-direction: column;  /* Stack nav items vertically */
-        align-items: center;  /* Center align the links */
+        flex-direction: column;
+        align-items: center;
     }
-
     .main-content {
-        padding: 10px;  /* Reduce padding for better spacing */
+        padding: 10px;
     }
-
     header h1 {
-        font-size: 3rem;  /* Make header text smaller */
+        font-size: 3.5rem;
     }
-
     header {
-        margin-top: 20px;  /* Add some space to the top to prevent overlap */
+        margin-top: 20px;
     }
-
     .styled-image {
-        width: 100%;  /* Make the image responsive */
-        max-width: 300px;  /* Limit the max width */
-        margin: 20px auto;  /* Center and give some space around the image */
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
     }
 }
 
-
+/* Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    nav {
+        padding: 10px;
+    }
+    header h1 {
+        font-size: 4.5rem;
+    }
+    .styled-image {
+        width: 100%;
+        max-width: 350px;
+    }
+}
