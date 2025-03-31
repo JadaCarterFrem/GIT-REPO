@@ -8,6 +8,7 @@ body {
     padding: 20px;
     margin: 0;
     box-sizing: border-box;
+    padding-top: 80px; /* Adjust for fixed navbar height */
 }
 
 /* Dark mode styles (will be applied via JavaScript) */
@@ -113,14 +114,4 @@ footer {
         font-size: 12px;
         padding: 8px 16px;
     }
-}
-
-/* Adjust header margin to ensure it doesn’t overlap with the fixed navbar */
-header {
-    margin-top: 80px; /* Adjust for fixed nav bar height */
-}
-
-/* If you want to prevent content from going under the navbar, you can add padding to the body */
-body {
-    padding-top: 80px; /* Same value as nav's height */
 }
