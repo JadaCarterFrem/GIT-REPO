@@ -136,6 +136,7 @@ footer {
     .styled-image {
         width: 90%;
         max-width: 250px;
+        height: auto;
     }
 }
 
@@ -158,8 +159,9 @@ footer {
         margin-top: 20px;
     }
     .styled-image {
-        width: 100%;
+        width: 80%;
         max-width: 300px;
+        height: auto;
         margin: 20px auto;
     }
 }
@@ -173,7 +175,8 @@ footer {
         font-size: 4.5rem;
     }
     .styled-image {
-        width: 100%;
+        width: 70%;
         max-width: 350px;
+        height: auto;
     }
 }
