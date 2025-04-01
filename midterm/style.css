@@ -73,15 +73,21 @@ header {
     text-align: center;
 }
 
-/* Make BLOOM larger and center it */
+    /* Default header size */
 header h1 {
-    font-size: 6rem; /* Larger size for BLOOM */
-    color: #ff97c2;  /* Soft pastel pink */
+    font-size: 6rem; /* Standard size for BLOOM */
+    color: #ff97c2;
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
+
+/* Smaller header on alternate pages */
+.alternate-page header h1 {
+    font-size: 4rem; /* Adjust size as needed */
+}
+
 
 /* Make the tagline centered and smaller */
 header p {
