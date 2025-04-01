@@ -134,17 +134,29 @@ footer {
 
 /* Media Queries */
 
-/* Small Screens (max-width: 480px) */
+/* Ensure the header fills the phone screen */
 @media (max-width: 480px) {
-    .styled-image {
-        width: 90%;
-        max-width: 200px;
+    header {
+        height: 100vh; /* Full viewport height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centers content vertically */
+        align-items: center; /* Centers content horizontally */
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 12vw; /* Scales with screen width */
+        max-width: 90%; /* Prevents overflow */
+        word-wrap: break-word;
+    }
+
+    header p {
+        font-size: 6vw; /* Adjusts tagline size */
+        max-width: 90%;
+        text-align: center;
     }
 }
-.alternate-page header h1 {
-    font-size: 1rem; /* Even smaller for alternate pages */
-}
-
 
 /* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
