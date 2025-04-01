@@ -75,7 +75,7 @@ header {
 
     /* Default header size */
 header h1 {
-    font-size: 6rem; /* Standard size for BLOOM */
+    font-size: 3rem; /* Standard size for BLOOM */
     color: #ff97c2;
     font-weight: bold;
     letter-spacing: 2px;
@@ -142,7 +142,7 @@ footer {
     }
 }
 .alternate-page header h1 {
-    font-size: 2rem; /* Even smaller for alternate pages */
+    font-size: 1rem; /* Even smaller for alternate pages */
 }
 
 
