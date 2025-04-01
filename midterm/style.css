@@ -198,8 +198,6 @@ header h1 {
 }
 
 
-
-
 /* Media Query: Adjust navbar for mobile screens */
 @media (max-width: 480px) {
     nav {
