@@ -76,7 +76,7 @@ header {
     text-align: center;
 }
 
-    /* Default header size */
+/* Default header size (larger on desktops) */
 header h1 {
     font-size: 6rem; /* Standard size for BLOOM */
     color: #ff97c2;
@@ -87,7 +87,7 @@ header h1 {
     white-space: nowrap; /* Prevents text from breaking */
     overflow-wrap: normal;
     word-break: keep-all;
-    }
+}
     
 
 
@@ -152,7 +152,7 @@ footer {
         align-items: center; /* Centers content horizontally */
         padding: 10px;
     }
-
+ 
     header h1 {
         font-size: 12vw; /* Scales with screen width */
         max-width: 90%; /* Prevents overflow */
@@ -177,6 +177,9 @@ footer {
 .alternate-page header h1 {
     font-size: 3rem;
 }
+header h1 {
+    font-size: 4rem; /*  smaller for tablets  */
+}
 
 
 /* Laptops (max-width: 1024px) */
@@ -189,6 +192,13 @@ footer {
 .alternate-page header h1 {
     font-size: 3rem;
 }
+ header h1 {
+    font-size: 5rem; /* Slightly smaller heading for laptops */
+   
+}
+
+
+
 
 /* Media Query: Adjust navbar for mobile screens */
 @media (max-width: 480px) {
@@ -216,22 +226,5 @@ footer {
 
 
 
-/* Adjust header positioning to prevent being cut off */
-header {
-    margin-top: 20px; /* Reduce to bring content down */
-    text-align: center;
-}
-
-/* Ensure proper spacing on mobile */
-@media (max-width: 480px) {
-    
-    header h1 {
-        max-width: 90%;
-        font-size: 8vw; /* Ensures it scales properly */
-        white-space: normal; /* Allows natural wrapping but avoids breaking words */
-        line-height: 1.2; /* Improves readability */
-        }
-    }
-    
 
 
