@@ -33,4 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
 
     if (!savedTheme) {
-        // If no theme 
+        // If no theme is saved, prompt the user
+        const userChoice = prompt("Welcome! Do you want Light mode or Dark mode? (Type 'light' or 'dark')");
+        
+        if (userChoice === 'dark' || userChoice === 'light') {
+            changeTheme(userChoice);
+        }
+    } else {
+        // Apply the saved theme
+        document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+    }
+});
+
