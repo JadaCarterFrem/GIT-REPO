@@ -8,7 +8,6 @@ body {
     padding: 20px;
     margin: 0;
     box-sizing: border-box;
-    padding-top: 80px; /* Adjust for fixed navbar height */
 }
 
 /* Dark mode styles (will be applied via JavaScript) */
@@ -79,7 +78,7 @@ header {
 
     /* Default header size */
 header h1 {
-    font-size: 3rem; /* Standard size for BLOOM */
+    font-size: 6rem; /* Standard size for BLOOM */
     color: #ff97c2;
     font-weight: bold;
     letter-spacing: 2px;
@@ -215,28 +214,16 @@ footer {
     }
 }
 
-/* Fix for header being cut off */
-body {
-    padding-top: 100px; /* Increased padding to prevent content overlap */
-}
+
 
 /* Adjust header positioning to prevent being cut off */
 header {
     margin-top: 20px; /* Reduce to bring content down */
-    padding-top: 20px; /* Ensure extra space below navbar */
     text-align: center;
 }
 
 /* Ensure proper spacing on mobile */
 @media (max-width: 480px) {
-    body {
-        padding-top: 120px; /* More space for smaller screens */
-    }
-    
-    header {
-        margin-top: 0;
-        padding-top: 40px; /* Push content down further */
-    }
     
     header h1 {
         max-width: 90%;
