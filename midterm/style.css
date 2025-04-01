@@ -85,7 +85,12 @@ header h1 {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 20px;
-}
+    white-space: nowrap; /* Prevents text from breaking */
+    overflow-wrap: normal;
+    word-break: keep-all;
+    }
+    
+
 
 /* Smaller header on alternate pages */
 .alternate-page header h1 {
@@ -234,9 +239,12 @@ header {
     }
     
     header h1 {
-        font-size: 10vw; /* Adjust header size for small screens */
         max-width: 90%;
+        font-size: 8vw; /* Ensures it scales properly */
+        white-space: normal; /* Allows natural wrapping but avoids breaking words */
+        line-height: 1.2; /* Improves readability */
+        }
     }
-}
+    
 
 
