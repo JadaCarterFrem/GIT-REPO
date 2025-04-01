@@ -31,41 +31,45 @@ nav {
     transition: background-color 0.5s;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color 0.5s, background-color 0.5s;
-}
-
-nav a:hover {
-    background-color: #6c8c7a;  /* Slightly darker pastel green */
-    border-radius: 5px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
+/* Navigation Bar */
+nav {
     display: flex;
     justify-content: center;
-    margin: 0;
+    background-color: #a7c5bd;
+    padding: 10px; /* Reduce padding */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: background-color 0.5s;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    white-space: nowrap; /* Prevents text wrapping */
 }
 
+/* Ensure nav items don't overflow on small screens */
+nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow-x: auto; /* Scrollable nav on small screens */
+    white-space: nowrap;
+}
+
+/* Reduce spacing between items */
 nav ul li {
-    margin: 0 15px;
+    margin: 0 8px; /* Reduce space between links */
 }
 
 nav a {
     text-decoration: none;
     color: white;
-    padding: 10px;
-    font-size: 16px;
+    padding: 8px 12px; /* Smaller padding */
+    font-size: 14px; /* Reduce font size */
 }
+
+
 
 /* Header Styling */
 header {
@@ -180,5 +184,29 @@ footer {
 }
 .alternate-page header h1 {
     font-size: 3rem;
+}
+
+/* Media Query: Adjust navbar for mobile screens */
+@media (max-width: 480px) {
+    nav {
+        flex-wrap: wrap; /* Allow wrapping on small screens */
+        justify-content: center;
+        padding: 5px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap; /* Allow multiple rows */
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px; /* Adjust spacing */
+    }
+
+    nav a {
+        font-size: 12px; /* Make text smaller */
+        padding: 6px 10px; /* Adjust padding */
+    }
 }
 
