@@ -73,6 +73,7 @@ header h1 {
     word-break: keep-all;
     max-width: 100%;
     font-size: clamp(2rem, 10vw, 6rem); /* Adjusts size dynamically */
+    text-indent: 2rem; /* Adds indentation */
 }
 
 /* Smaller header on alternate pages */
@@ -169,12 +170,16 @@ header h1 {
         width: 60%;
         max-width: 280px;
     }
+    header h1 {
+        font-size: clamp(3rem, 9vw, 5rem); /* Slightly smaller heading for laptops */
+        max-width: 70%; /* Restrict width to avoid long words */
+        text-indent: 2rem; /* Adds indentation */
+        margin: 0 auto; /* Center the text block */
+    }
 }
+
 .alternate-page header h1 {
     font-size: clamp(2rem, 6vw, 3rem);
-}
- header h1 {
-    font-size: clamp(3rem, 9vw, 5rem); /* Slightly smaller heading for laptops */
 }
 
 /* Media Query: Adjust navbar for mobile screens */
