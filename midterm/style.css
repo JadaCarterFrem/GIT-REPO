@@ -20,20 +20,6 @@ body {
 nav {
     display: flex;
     justify-content: center;
-    background-color: #a7c5bd;  /* Soft pastel green */
-    padding: 15px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    transition: background-color 0.5s;
-}
-
-/* Navigation Bar */
-nav {
-    display: flex;
-    justify-content: center;
     background-color: #a7c5bd;
     padding: 10px; /* Reduce padding */
     width: 100%;
@@ -68,8 +54,6 @@ nav a {
     font-size: 14px; /* Reduce font size */
 }
 
-
-
 /* Header Styling */
 header {
     margin-top: 80px; /* Adjust for fixed nav bar */
@@ -84,18 +68,16 @@ header h1 {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 20px;
-    white-space: nowrap; /* Prevents text from breaking */
-    overflow-wrap: normal;
-    word-break: keep-all;
+    white-space: normal; /* Allow text wrapping */
+    overflow-wrap: break-word; /* Enable word wrapping */
+    word-break: break-word; /* Allow breaking long words */
+    max-width: 90%; /* Prevents overflow */
 }
-    
-
 
 /* Smaller header on alternate pages */
 .alternate-page header h1 {
     font-size: 3rem; /* Adjust size as needed */
 }
-
 
 /* Make the tagline centered and smaller */
 header p {
@@ -181,7 +163,6 @@ header h1 {
     font-size: 4rem; /*  smaller for tablets  */
 }
 
-
 /* Laptops (max-width: 1024px) */
 @media (max-width: 1024px) {
     .styled-image {
@@ -194,9 +175,7 @@ header h1 {
 }
  header h1 {
     font-size: 5rem; /* Slightly smaller heading for laptops */
-   
 }
-
 
 /* Media Query: Adjust navbar for mobile screens */
 @media (max-width: 480px) {
@@ -221,8 +200,3 @@ header h1 {
         padding: 6px 10px; /* Adjust padding */
     }
 }
-
-
-
-
-
