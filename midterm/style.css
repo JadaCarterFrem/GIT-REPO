@@ -29,7 +29,6 @@ nav {
     z-index: 100;
     transition: background-color 0.5s;
     overflow-x: auto; /* Allows horizontal scrolling */
-    white-space: nowrap; /* Prevents text wrapping */
 }
 
 /* Ensure nav items don't overflow on small screens */
@@ -68,10 +67,8 @@ header h1 {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 20px;
-    white-space: normal; /* Allow text wrapping */
-    overflow-wrap: break-word; /* Enable word wrapping */
-    word-break: break-word; /* Allow breaking long words */
-    max-width: 90%; /* Prevents overflow */
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 /* Smaller header on alternate pages */
@@ -138,7 +135,8 @@ footer {
     header h1 {
         font-size: 12vw; /* Scales with screen width */
         max-width: 90%; /* Prevents overflow */
-        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
 
     header p {
