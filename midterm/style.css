@@ -29,6 +29,7 @@ nav {
     z-index: 100;
     transition: background-color 0.5s;
     overflow-x: auto; /* Allows horizontal scrolling */
+    white-space: nowrap; /* Prevents text wrapping */
 }
 
 /* Ensure nav items don't overflow on small screens */
@@ -67,13 +68,16 @@ header h1 {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 20px;
-    overflow-wrap: break-word;
-    word-break: break-word;
+    white-space: nowrap; /* Prevents text from breaking */
+    overflow-wrap: normal;
+    word-break: keep-all;
+    max-width: 100%;
+    font-size: clamp(2rem, 10vw, 6rem); /* Adjusts size dynamically */
 }
 
 /* Smaller header on alternate pages */
 .alternate-page header h1 {
-    font-size: 3rem; /* Adjust size as needed */
+    font-size: clamp(2rem, 8vw, 3rem); /* Dynamically scales text */
 }
 
 /* Make the tagline centered and smaller */
@@ -133,14 +137,12 @@ footer {
     }
  
     header h1 {
-        font-size: 12vw; /* Scales with screen width */
+        font-size: clamp(1.5rem, 8vw, 12vw); /* Dynamically adjusts */
         max-width: 90%; /* Prevents overflow */
-        overflow-wrap: break-word;
-        word-break: break-word;
     }
 
     header p {
-        font-size: 6vw; /* Adjusts tagline size */
+        font-size: clamp(1rem, 6vw, 6vw); /* Adjusts tagline size */
         max-width: 90%;
         text-align: center;
     }
@@ -155,10 +157,10 @@ footer {
 }
     
 .alternate-page header h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 7vw, 3rem);
 }
 header h1 {
-    font-size: 4rem; /*  smaller for tablets  */
+    font-size: clamp(3rem, 8vw, 4rem); /* Adjusts dynamically for tablets */
 }
 
 /* Laptops (max-width: 1024px) */
@@ -169,10 +171,10 @@ header h1 {
     }
 }
 .alternate-page header h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 6vw, 3rem);
 }
  header h1 {
-    font-size: 5rem; /* Slightly smaller heading for laptops */
+    font-size: clamp(3rem, 9vw, 5rem); /* Slightly smaller heading for laptops */
 }
 
 /* Media Query: Adjust navbar for mobile screens */
