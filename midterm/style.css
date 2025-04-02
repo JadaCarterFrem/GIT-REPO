@@ -207,6 +207,11 @@ footer {
         font-size: clamp(2.5rem, 7vw, 3.5rem);
         max-width: 70%;
     }
+    header p {
+        display: block; /* Ensures it's treated as a block element */
+        text-align: center;
+        width: 100%; /* Prevents any unintended width restrictions */
+    }
 }
 
 /* Media Query: Adjust navbar for mobile screens */
