@@ -10,6 +10,7 @@ body {
     box-sizing: border-box;
 }
 
+
 /* Dark mode styles (will be applied via JavaScript) */
 .dark-mode {
     background-color: #333;
@@ -77,6 +78,11 @@ header {
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
+}
+header p {
+    display: block;
+    text-align: center;
+    width: 100%; 
 }
 
 /* Home Page Header - Larger */
@@ -208,9 +214,9 @@ footer {
         max-width: 70%;
     }
     header p {
-        display: block; /* Ensures it's treated as a block element */
+        display: block;
         text-align: center;
-        width: 100%; /* Prevents any unintended width restrictions */
+        width: 100%; 
     }
 }
 
