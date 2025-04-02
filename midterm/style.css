@@ -16,6 +16,17 @@ body {
     color: white;
 }
 
+/* Default page heading color for light mode */
+header h1 {
+    color: #e971f7; /* Soft vibrant purple */
+}
+
+/* Ensure dark mode overrides the heading color */
+.dark-mode header h1 {
+    color: white; /* Keeps readability in dark mode */
+}
+
+
 /* Navigation Bar */
 nav {
     display: flex;
