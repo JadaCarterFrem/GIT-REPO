@@ -83,6 +83,7 @@ header p {
     display: block;
     text-align: center;
     width: 100%; 
+    
 }
     
 
@@ -107,12 +108,17 @@ header p {
 }
 
 /* Make the tagline centered and smaller */
-header p {
-    font-size: 1.5rem;
-    color: #4f6d7a;
-    margin-top: 10px;
-    text-align: center;
-    max-width: 90%;
+
+    header p {
+        font-size: 1.5rem;
+        color: #4f6d7a;
+        margin-top: 10px;
+        text-align: center;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
 }
 
 /* Theme Toggle Button */
