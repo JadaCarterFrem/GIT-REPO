@@ -83,7 +83,12 @@ header p {
     display: block;
     text-align: center;
     width: 100%; 
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+    
 
 /* Home Page Header - Larger */
 .home-page header h1 {
