@@ -8,25 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Welcome to Bloom by Jada!");
         sessionStorage.setItem("alertShown", "true");
     }
+ 
+    // Apply the stored theme preference to ALL pages
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+      document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+  }
 });
 
-
-
-// Function to toggle between light and dark mode
-function changeTheme(theme = null) {
-    const body = document.body;
-
-    // If a theme is provided, apply it
-    if (theme) {
-        body.classList.toggle('dark-mode', theme === 'dark');
-        localStorage.setItem('theme', theme);
-    } else {
-        // Otherwise, toggle the theme
-        body.classList.toggle('dark-mode');
-        const newTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
-        localStorage.setItem('theme', newTheme);
-    }
-}
 
 // Check localStorage for theme preference and apply it on page load
 document.addEventListener('DOMContentLoaded', () => {
@@ -45,3 +34,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+// Function to toggle between light and dark mode
+function changeTheme(theme = null) {
+    const body = document.body;
+    let newTheme;
+
+    if (theme) {
+        // Apply the selected theme
+        body.classList.toggle('dark-mode', theme === 'dark');
+        newTheme = theme;
+    } else {
+        // Toggle the theme
+        body.classList.toggle('dark-mode');
+        newTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+    }
+
+    // Save the preference so it applies to all pages
+    localStorage.setItem('theme', newTheme);
+}
