@@ -21,15 +21,15 @@ nav {
     display: flex;
     justify-content: center;
     background-color: #a7c5bd;
-    padding: 10px; /* Reduce padding */
+    padding: 10px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
     transition: background-color 0.5s;
-    overflow-x: auto; /* Allows horizontal scrolling */
-    white-space: nowrap; /* Prevents text wrapping */
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 /* Ensure nav items don't overflow on small screens */
@@ -38,55 +38,58 @@ nav ul {
     padding: 0;
     margin: 0;
     list-style: none;
-    overflow-x: auto; /* Scrollable nav on small screens */
+    overflow-x: auto;
     white-space: nowrap;
 }
 
 /* Reduce spacing between items */
 nav ul li {
-    margin: 0 8px; /* Reduce space between links */
+    margin: 0 8px;
 }
 
 nav a {
     text-decoration: none;
     color: white;
-    padding: 8px 12px; /* Smaller padding */
-    font-size: 14px; /* Reduce font size */
+    padding: 8px 12px;
+    font-size: 14px;
 }
 
 /* Header Styling */
 header {
     margin-top: 80px; /* Adjust for fixed nav bar */
     text-align: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Default header size (larger on desktops) */
-header h1 {
-    font-size: 6rem; /* Standard size for BLOOM */
+/* Home Page Header - Larger */
+.home-page header h1 {
+    font-size: clamp(4rem, 12vw, 7rem); /* Bigger size for homepage */
     color: #ff97c2;
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 20px;
-    white-space: nowrap; /* Prevents text from breaking */
-    overflow-wrap: normal;
-    word-break: keep-all;
-    max-width: 100%;
-    font-size: clamp(2rem, 10vw, 6rem); /* Adjusts size dynamically */
-    text-indent: 2rem; /* Adds indentation */
+    white-space: normal;
+    word-break: break-word;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Smaller header on alternate pages */
 .alternate-page header h1 {
-    font-size: clamp(2rem, 8vw, 3rem); /* Dynamically scales text */
+    font-size: clamp(2rem, 9vw, 4rem); /* Dynamically scales */
 }
 
 /* Make the tagline centered and smaller */
 header p {
     font-size: 1.5rem;
-    color: #4f6d7a;  /* Muted slate blue */
+    color: #4f6d7a;
     margin-top: 10px;
-    text-align: center; /* Ensure tagline is centered */
+    text-align: center;
+    max-width: 90%;
 }
 
 /* Theme Toggle Button */
@@ -97,18 +100,18 @@ header p {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #f4b6e1;  /* Soft pastel pink */
+    background-color: #f4b6e1;
     color: #333;
     transition: background-color 0.3s;
 }
 
 .theme-button:hover {
-    background-color: #d58aaf;  /* Darker pastel pink */
+    background-color: #d58aaf;
 }
 
 /* Footer Styling */
 footer {
-    background-color: #e1d0f0;  /* Soft pastel lavender */
+    background-color: #e1d0f0;
     color: white;
     text-align: center;
     padding: 15px;
@@ -119,33 +122,37 @@ footer {
 
 /* Adjust image size and centering */
 .styled-image {
-    width: min(25vw, 300px); /* Ensures image is a quarter of the viewport but never exceeds 300px */
+    width: min(25vw, 300px);
     display: block;
     margin: 20px auto;
 }
 
 /* Media Queries */
 
-/* Ensure the header fills the phone screen */
+/* Phones (max-width: 480px) */
 @media (max-width: 480px) {
     header {
-        height: 100vh; /* Full viewport height */
+        height: auto;
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Centers content vertically */
-        align-items: center; /* Centers content horizontally */
+        justify-content: center;
+        align-items: center;
         padding: 10px;
     }
  
-    header h1 {
-        font-size: clamp(1.5rem, 8vw, 12vw); /* Dynamically adjusts */
-        max-width: 90%; /* Prevents overflow */
+    .home-page header h1 {
+        font-size: clamp(3rem, 14vw, 5rem);
+        max-width: 90%;
+    }
+
+    .alternate-page header h1 {
+        font-size: clamp(2rem, 9vw, 3rem);
+        max-width: 90%;
     }
 
     header p {
-        font-size: clamp(1rem, 6vw, 6vw); /* Adjusts tagline size */
+        font-size: clamp(1rem, 6vw, 6vw);
         max-width: 90%;
-        text-align: center;
     }
 }
 
@@ -155,13 +162,16 @@ footer {
         width: 75%;
         max-width: 250px;
     }
-}
-    
-.alternate-page header h1 {
-    font-size: clamp(2rem, 7vw, 3rem);
-}
-header h1 {
-    font-size: clamp(3rem, 8vw, 4rem); /* Adjusts dynamically for tablets */
+
+    .home-page header h1 {
+        font-size: clamp(3rem, 10vw, 6rem);
+        max-width: 80%;
+    }
+
+    .alternate-page header h1 {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+        max-width: 80%;
+    }
 }
 
 /* Laptops (max-width: 1024px) */
@@ -170,38 +180,39 @@ header h1 {
         width: 60%;
         max-width: 280px;
     }
-    header h1 {
-        font-size: clamp(3rem, 9vw, 5rem); /* Slightly smaller heading for laptops */
-        max-width: 70%; /* Restrict width to avoid long words */
-        text-indent: 2rem; /* Adds indentation */
-        margin: 0 auto; /* Center the text block */
-    }
-}
 
-.alternate-page header h1 {
-    font-size: clamp(2rem, 6vw, 3rem);
+    .home-page header h1 {
+        font-size: clamp(4rem, 11vw, 6rem);
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    .alternate-page header h1 {
+        font-size: clamp(2.5rem, 7vw, 3.5rem);
+        max-width: 70%;
+    }
 }
 
 /* Media Query: Adjust navbar for mobile screens */
 @media (max-width: 480px) {
     nav {
-        flex-wrap: wrap; /* Allow wrapping on small screens */
+        flex-wrap: wrap;
         justify-content: center;
         padding: 5px;
     }
 
     nav ul {
         flex-direction: row;
-        flex-wrap: wrap; /* Allow multiple rows */
+        flex-wrap: wrap;
         justify-content: center;
     }
 
     nav ul li {
-        margin: 5px; /* Adjust spacing */
+        margin: 5px;
     }
 
     nav a {
-        font-size: 12px; /* Make text smaller */
-        padding: 6px 10px; /* Adjust padding */
+        font-size: 12px;
+        padding: 6px 10px;
     }
 }
