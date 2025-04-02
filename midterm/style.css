@@ -200,6 +200,14 @@ footer {
         font-size: clamp(2rem, 8vw, 3.5rem);
         max-width: 80%;
     }
+    
+    header p {
+        text-align: center;
+        width: 100%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
 }
 
 /* Laptops (max-width: 1024px) */
