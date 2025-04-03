@@ -33,6 +33,27 @@ header {
     color: white; /* Keeps readability in dark mode */
 }
 
+
+/* Pastel Mode Styles */
+.pastel-mode {
+    background-color: #f8e1f4;  /* Soft pastel pink */
+    color: #333;  /* Dark text for contrast */
+}
+
+/* Ensure headers and other elements adapt to pastel mode */
+.pastel-mode header h1 {
+    color: #d973a1; /* A complementary pastel color for headers */
+}
+
+.pastel-mode nav {
+    background-color: #ffc6d9; /* Light pastel pink for nav */
+}
+
+.pastel-mode footer {
+    background-color: #f0d9ff; /* Soft lavender footer */
+}
+
+
 /* Navigation Bar */
 nav {
     display: flex;
