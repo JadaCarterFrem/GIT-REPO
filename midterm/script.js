@@ -7,41 +7,35 @@ document.addEventListener("DOMContentLoaded", function () {
         sessionStorage.setItem("alertShown", "true");
     }
 
-    // Check localStorage for theme preference
-    const savedTheme = localStorage.getItem('theme');
+    // Check if a theme is already saved
+    let savedTheme = localStorage.getItem('theme');
 
+    // Apply saved theme if exists
     if (savedTheme) {
-        // Apply the stored theme to ALL pages
         document.body.classList.toggle('dark-mode', savedTheme === 'dark');
     }
 
-    // Ensure the user is prompted for a theme at least once per session
+    // **Force prompt to appear at least once per session**
     if (!sessionStorage.getItem("themePromptShown")) {
-        let userChoice;
-        while (!userChoice || (userChoice !== "light" && userChoice !== "dark")) {
+        let userChoice = "";
+
+        // Keep asking until they enter 'light' or 'dark'
+        while (!["light", "dark"].includes(userChoice)) {
             userChoice = prompt("Welcome! Do you want Light mode or Dark mode? (Type 'light' or 'dark')")?.toLowerCase();
         }
-        
+
+        // Apply & Save theme
         changeTheme(userChoice);
-        sessionStorage.setItem("themePromptShown", "true"); // Prevents multiple prompts per session
+        sessionStorage.setItem("themePromptShown", "true"); // Prevents repeat prompts within a session
     }
 });
 
 // Function to toggle between light and dark mode
-function changeTheme(theme = null) {
-    const body = document.body;
-    let newTheme;
+function changeTheme(theme) {
+    if (!theme) return; // Prevent accidental calls with null values
 
-    if (theme) {
-        // Apply the selected theme
-        body.classList.toggle('dark-mode', theme === 'dark');
-        newTheme = theme;
-    } else {
-        // Toggle the theme
-        body.classList.toggle('dark-mode');
-        newTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
-    }
+    document.body.classList.toggle('dark-mode', theme === 'dark');
 
     // Save the preference in localStorage so it applies to all pages
-    localStorage.setItem('theme', newTheme);
+    localStorage.setItem('theme', theme);
 }
