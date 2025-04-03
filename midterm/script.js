@@ -1,8 +1,6 @@
 // Display a message in the browser console
 console.log("Welcome to Bloom by Jada!");
 
-
-// Show an alert message when the page loads (only once per session)
 document.addEventListener("DOMContentLoaded", function () {
     if (!sessionStorage.getItem("alertShown")) {
         alert("Welcome to Bloom by Jada!");
@@ -15,13 +13,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (savedTheme) {
         // Apply the stored theme to ALL pages
         document.body.classList.toggle('dark-mode', savedTheme === 'dark');
-    } else {
-        // If no theme is saved, ask the user ONCE
-        const userChoice = prompt("Welcome! Do you want Light mode or Dark mode? (Type 'light' or 'dark')");
-        
-        if (userChoice === 'dark' || userChoice === 'light') {
-            changeTheme(userChoice);
+    }
+
+    // Ensure the user is prompted for a theme at least once per session
+    if (!sessionStorage.getItem("themePromptShown")) {
+        let userChoice;
+        while (!userChoice || (userChoice !== "light" && userChoice !== "dark")) {
+            userChoice = prompt("Welcome! Do you want Light mode or Dark mode? (Type 'light' or 'dark')")?.toLowerCase();
         }
+        
+        changeTheme(userChoice);
+        sessionStorage.setItem("themePromptShown", "true"); // Prevents multiple prompts per session
     }
 });
 
@@ -43,5 +45,3 @@ function changeTheme(theme = null) {
     // Save the preference in localStorage so it applies to all pages
     localStorage.setItem('theme', newTheme);
 }
-
-
