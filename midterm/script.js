@@ -1,5 +1,8 @@
 // Display a message in the browser console
 console.log("Welcome to Bloom by Jada!");
+console.log("Before alert");
+alert("Welcome to Bloom by Jada!");
+console.log("After alert");
 
 // Show an alert message when the page loads (only once per session)
 document.addEventListener("DOMContentLoaded", function () {
@@ -42,3 +45,5 @@ function changeTheme(theme = null) {
     // Save the preference in localStorage so it applies to all pages
     localStorage.setItem('theme', newTheme);
 }
+
+
