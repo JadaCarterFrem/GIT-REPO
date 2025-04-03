@@ -46,3 +46,11 @@ function applyTheme(theme) {
     // Save the preference in localStorage
     localStorage.setItem("theme", theme);
 }
+function changeTheme(theme) {
+    if (!theme) return; 
+
+    document.body.classList.remove("light-mode", "dark-mode", "pastel-mode"); 
+    document.body.classList.add(`${theme}-mode`);  
+
+    localStorage.setItem('theme', theme);
+}
