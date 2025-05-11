@@ -11,6 +11,8 @@ body {
 }
 
 
+/* DARK MODE STYLING */
+
 /* Dark mode styles (will be applied via JavaScript) */
 .dark-mode {
     background-color: #333;
@@ -37,6 +39,20 @@ header {
 .dark-mode header p {
     color: #f8eef9;
 }
+/* Dark mode link color */
+.dark-mode a {
+    color: white;
+}
+
+.dark-mode a:visited {
+    color: white;
+}
+
+.dark-mode a:hover,
+.dark-mode a:active {
+    color: #ccc; /* Slightly lighter for hover/active state */
+}
+
 
 
 /* Pastel Mode Styles */
