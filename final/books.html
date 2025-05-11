@@ -6,7 +6,7 @@
     <title>Books</title>
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-257QX05Y36"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -14,6 +14,12 @@
   gtag('js', new Date());
 
   gtag('config', 'G-257QX05Y36');
+
+  <a href="about.html" onclick="gtag('event', 'nav_click', {
+  event_category: 'navigation',
+  event_label: 'About'
+});">About</a>
+
 </script>
 
 </head>
@@ -47,6 +53,16 @@
     </section>
 
     <img src="images/unsplashrocks.jpg" alt="pretty flower" class="styled-image">
+
+    <!-- Explore More Books Button -->
+    <button onclick="gtag('event', 'CTR', {
+        event_category: 'callToAction',
+        event_label: 'Explore More Books'
+    }); window.location.href='https://www.amazon.com/your-storefront-link';">
+        Explore More Books
+    </button>
+
+    <script src="script.js"></script>
     
 
     <script src="script.js"></script>
