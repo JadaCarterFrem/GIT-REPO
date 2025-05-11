@@ -199,6 +199,14 @@ footer {
     margin: 20px auto;
 }
 
+.image-caption {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+}
+
+
 /* Media Queries */
 
 /* Phones (max-width: 480px) */
