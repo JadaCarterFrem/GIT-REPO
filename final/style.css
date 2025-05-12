@@ -354,19 +354,18 @@ footer {
 
 /* Media Queries for Gallery */
 
-/* Base styles */
+/* Base styles for the gallery */
 .gallery {
     display: grid;
-    gap: 0; /* Remove gaps between images */
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Auto-fit images to screen */
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
+    gap: 2px; /* Slight gap between images */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic columns */
+    width: 100%; /* Full width */
 }
 
 .gallery img {
-    width: 100%;  /* Make images take full width */
-    height: 100%; /* Make images take full height */
-    object-fit: cover; /* Cover the entire area without distortion */
+    width: 100%;  /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Fit image without cropping */
 }
 
 /* Phones (max-width: 480px) */
@@ -389,4 +388,5 @@ footer {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
 
