@@ -354,35 +354,39 @@ footer {
 
 /* Media Queries for Gallery */
 
+/* Base styles */
+.gallery {
+    display: grid;
+    gap: 0; /* Remove gaps between images */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Auto-fit images to screen */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+}
+
+.gallery img {
+    width: 100%;  /* Make images take full width */
+    height: 100%; /* Make images take full height */
+    object-fit: cover; /* Cover the entire area without distortion */
+}
+
 /* Phones (max-width: 480px) */
 @media (max-width: 480px) {
     .gallery {
-        grid-template-columns: 1fr; /* Stack images on smaller screens */
-    }
-
-    .gallery img {
-        max-width: 100%;  /* Ensure images don't overflow */
+        grid-template-columns: 1fr;
     }
 }
 
 /* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
     .gallery {
-        grid-template-columns: repeat(2, 1fr); /* Two images per row on tablets */
-    }
-
-    .gallery img {
-        max-width: 100%;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /* Laptops (max-width: 1024px) */
 @media (max-width: 1024px) {
     .gallery {
-        grid-template-columns: repeat(3, 1fr); /* Three images per row on laptops */
-    }
-
-    .gallery img {
-        max-width: 100%;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
+
