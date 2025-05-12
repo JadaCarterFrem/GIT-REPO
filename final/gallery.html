@@ -4,41 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Digital Design Work</title>
-    <link rel="stylesheet" href="styles.css"> 
- 
+    <link rel="stylesheet" href="styles.css">
+
     <!-- Google Analytics (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-257QX05Y36"></script>
- <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-
-     gtag('config', 'G-257QX05Y36');
- </script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-257QX05Y36"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-257QX05Y36');
+    </script>
 </head>
-<nav>
-    <a href="index.html">Home</a>
-    <a href="mindfulmedia.html">Mindful Media</a>
-    <a href="books.html">Books</a>
-    <a href="meditation.html">Meditation</a>
-    <a href="about.html" onclick="gtag('event', 'link_click', {
-        event_category: 'navigation',
-        event_label: 'About Page'
-    });">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="affiliate.html">Affiliates</a>
-    <a href="gallery.html">Gallery</a>
-</nav>
 <body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="mindfulmedia.html">Mindful Media</a>
+        <a href="books.html">Books</a>
+        <a href="meditation.html">Meditation</a>
+        <a href="about.html" onclick="gtag('event', 'link_click', {event_category: 'navigation', event_label: 'About Page'});">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="affiliate.html">Affiliates</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
 
-    <h1>Digital Design Work I've Done on Theme to This Project</h1>
+    <header>
+        <h1>Digital Design Work I've Done on Theme to This Project</h1>
+    </header>
 
     <div class="gallery">
-        <img src="design1.png" alt="Design 1">
-        <img src="design2.png" alt="Design 2">
-        <img src="design3.png" alt="Design 3">
+        <img src="design1.png" alt="Design 1" class="styled-image">
+        <img src="design2.png" alt="Design 2" class="styled-image">
+        <img src="design3.png" alt="Design 3" class="styled-image">
     </div>
 
+    <button id="theme-toggle" class="theme-button">Toggle Theme</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
