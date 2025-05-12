@@ -7,20 +7,14 @@
     <link rel="stylesheet" href="style.css">
     
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-257QX05Y36"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-257QX05Y36"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'G-257QX05Y36');
-</script>
-
-<a href="about.html" onclick="gtag('event', 'link_click', {
-    event_category: 'navigation',
-    event_label: 'spotify'
-  });">About</a>
-
+        gtag('config', 'G-257QX05Y36');
+    </script>
 </head>
 <body>
     <header>
@@ -31,7 +25,10 @@
         <a href="mindfulmedia.html">Mindful Media</a>
         <a href="books.html">Books</a>
         <a href="meditation.html">Meditation</a>
-        <a href="about.html">About</a>
+        <a href="about.html" onclick="gtag('event', 'link_click', {
+            event_category: 'navigation',
+            event_label: 'About Page'
+        });">About</a>
         <a href="contact.html">Contact</a>
         <a href="affiliate.html">Affiliates</a>
         <a href="gallery.html">Gallery</a>
@@ -40,40 +37,34 @@
     <section>
         <p>Listening to specific Hz frequencies is often used in meditation and sound therapy due to their supposed effects on the mind and body. Different frequencies are believed to promote relaxation, focus, healing, and emotional balance. Below I have provided some of my own playlists I have curated on Spotify:</p>
 
-           <!-- List with tracking -->
-<ul>
-    <li>
-        <a href="https://open.spotify.com/playlist/4HWZ5xYeFXQ2WxfUg3I9fU?si=lPymanvJQ5GudaMs2h5hxQ" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit General Hz' });">
-            Visit General Hz
-        </a>
-    </li>
-    <li>
-        <a href="https://open.spotify.com/playlist/657NunVAedsSv12jznsJhz" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit Anger Hz' });">
-            Visit Anger Hz
-        </a>
-    </li>
-    <li>
-        <a href="https://open.spotify.com/playlist/3InrCyJpOn66Pfk6C2cAWd" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit Anxiety Hz' });">
-            Visit Anxiety Hz
-        </a>
-    </li>
-    <li>
-        <a href="https://open.spotify.com/playlist/7GInC6fDmYk90gAQs3YBNn" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit Sleep Hz' });">
-            Visit Sleep Hz
-        </a>
-    </li>
-</ul>
+        <!-- List with tracking -->
+        <ul>
+            <li>
+                <a href="https://open.spotify.com/playlist/4HWZ5xYeFXQ2WxfUg3I9fU?si=lPymanvJQ5GudaMs2h5hxQ" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit General Hz' });">
+                    Visit General Hz
+                </a>
+            </li>
+            <li>
+                <a href="https://open.spotify.com/playlist/657NunVAedsSv12jznsJhz" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit Anger Hz' });">
+                    Visit Anger Hz
+                </a>
+            </li>
+            <li>
+                <a href="https://open.spotify.com/playlist/3InrCyJpOn66Pfk6C2cAWd" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit Anxiety Hz' });">
+                    Visit Anxiety Hz
+                </a>
+            </li>
+            <li>
+                <a href="https://open.spotify.com/playlist/7GInC6fDmYk90gAQs3YBNn" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit Sleep Hz' });">
+                    Visit Sleep Hz
+                </a>
+            </li>
         </ul>
     </section>
-
-
-
-    
 
     <img src="images/meditationunsplash.jpg" alt="pretty flower" class="styled-image">
 
     <script src="script.js"></script>
     <button id="theme-toggle" class="theme-button">Toggle Theme</button>
-
-
 </body>
+</html>
