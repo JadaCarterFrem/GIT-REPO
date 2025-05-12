@@ -1,3 +1,5 @@
+
+
 // Function to get cookie by name
 function getCookie(name) {
     const cookies = document.cookie.split('; ');
