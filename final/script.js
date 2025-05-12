@@ -1,27 +1,48 @@
+// Function to get cookie by name
+function getCookie(name) {
+    const cookies = document.cookie.split('; ');
+    for (let c of cookies) {
+        const [key, value] = c.split('=');
+        if (key === name) return decodeURIComponent(value);
+    }
+    return null;
+}
+
+// Function to set a cookie
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000)); // Cookie expires in 'days' days
+    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires.toUTCString()}; path=/`;
+}
+
 // Display a message in the browser console
 console.log("Welcome to Bloom by Jada!");
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Check if the name is already saved in localStorage
-    let userName = localStorage.getItem("userName");
-
-    // If the name is not saved, ask for it
-    if (!userName) {
-        userName = prompt("Welcome to Bloom by Jada! What's your name?");
-        if (userName) {
-            localStorage.setItem("userName", userName);
-        }
+    if (!sessionStorage.getItem("alertShown")) {
+        alert("Welcome to Bloom by Jada!");
+        sessionStorage.setItem("alertShown", "true");
     }
 
-    // Display a personalized greeting
-    if (userName) {
-        alert(`Welcome back, ${userName}!`);
+    // Check if a name is already saved in cookies
+    let userName = getCookie("name");
+
+    // If no name is stored, ask the user for their name and save it to cookies
+    if (!userName) {
+        userName = prompt("What's your name?");
+        setCookie("name", userName, 7); // Save the name in cookies for 7 days
+    }
+
+    // Display a personalized welcome message
+    const welcomeMessage = document.getElementById("welcome-message");
+    if (welcomeMessage && userName) {
+        welcomeMessage.textContent = `Welcome back, ${userName}!`;
     }
 
     // Available themes
     const themes = ["light", "dark", "pastel"];  // Added 'pastel' as a third option
 
-    // Check if a theme is already saved
+    // Check if a theme is already saved in localStorage
     let savedTheme = localStorage.getItem("theme");
 
     // Apply saved theme if it exists
@@ -29,17 +50,18 @@ document.addEventListener("DOMContentLoaded", function () {
         applyTheme(savedTheme);
     }
 
-    // Ensure prompt appears at least once per session for theme
+    // Ensure prompt appears at least once per session
     if (!sessionStorage.getItem("themePromptShown")) {
         let userChoice = "";
 
         // Keep asking until they enter a valid theme
         while (!themes.includes(userChoice)) {
-            userChoice = prompt("Do you prefer Light mode, Dark mode, or Pastel mode? (Type 'light', 'dark', or 'pastel')")?.toLowerCase();
+            userChoice = prompt("Welcome! Do you want Light mode, Dark mode, or Pastel mode? (Type 'light', 'dark', or 'pastel')")?.toLowerCase();
         }
 
-        // Apply & Save theme
+        // Apply & Save theme in localStorage
         applyTheme(userChoice);
+        localStorage.setItem("theme", userChoice); // Save theme to localStorage
         sessionStorage.setItem("themePromptShown", "true"); // Prevents repeat prompts within a session
     }
 });
@@ -64,7 +86,7 @@ function changeTheme(theme) {
     document.body.classList.remove("light-mode", "dark-mode", "pastel-mode"); 
     document.body.classList.add(`${theme}-mode`);  
 
-    localStorage.setItem('theme', theme);
+    localStorage.setItem('theme', theme); // Save theme in localStorage
 }
 
 // Available themes
