@@ -7,21 +7,14 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-257QX05Y36"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-257QX05Y36"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-257QX05Y36');
-
-  <a href="about.html" onclick="gtag('event', 'nav_click', {
-      event_category: 'navigation',
-      event_label: 'About'
-    });">About</a>
-    
-</script>
-
+      gtag('config', 'G-257QX05Y36');
+    </script>
 </head>
 <body>
     <header>
@@ -32,7 +25,10 @@
         <a href="mindfulmedia.html">Mindful Media</a>
         <a href="books.html">Books</a>
         <a href="meditation.html">Meditation</a>
-        <a href="about.html">About</a>
+        <a href="about.html" onclick="gtag('event', 'nav_click', {
+            event_category: 'navigation',
+            event_label: 'About'
+        });">About</a>
         <a href="contact.html">Contact</a>
         <a href="affiliate.html">Affiliates</a>
         <a href="gallery.html">Gallery</a>
@@ -40,39 +36,32 @@
 
     <img src="images/lotusunsplash.jpg" alt="pretty flower" class="styled-image">
 
-
-
     <section>
         <p>Instead of letting social media be a mindless habit or falling into the doom scroll tunnel, we can use media in a productive way. The right spaces can offer endless opportunities to learn and engage meaningfully. Here are some of my favorite options to break away from the endless scroll:</p>
 
-        <!--  YouTube Links with Tracking Clicks -->
-<ul>
-    <li>
-        <a href="https://www.youtube.com/@profoundpondering8575/videos" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit General' });">
-            Visit Profound Pondering
-        </a>
-    </li>
-    <li>
-        <a href="https://www.youtube.com/@Eternalised" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit Eternalised' });">
-            Visit Eternalised
-        </a>
-    </li>
-    <li>
-        <a href="https://www.youtube.com/@PursuitofWonder" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit Pursuit of Wonder' });">
-            Visit Pursuit of Wonder
-        </a>
-    </li>
-</ul>
+        <!-- YouTube Links with Tracking Clicks -->
+        <ul>
+            <li>
+                <a href="https://www.youtube.com/@profoundpondering8575/videos" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit General' });">
+                    Visit Profound Pondering
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/@Eternalised" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit Eternalised' });">
+                    Visit Eternalised
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/@PursuitofWonder" onclick="gtag('event', 'click', { event_category: 'link', event_label: 'Visit Pursuit of Wonder' });">
+                    Visit Pursuit of Wonder
+                </a>
+            </li>
+        </ul>
 
         <p>By shifting your feed to more intentional, enriching content, you can still enjoy social media while avoiding the doom tunnel.</p>
     </section>
 
-
-
-
     <script src="script.js"></script>
     <button id="theme-toggle" class="theme-button">Toggle Theme</button>
-
-
 </body>
 </html>
