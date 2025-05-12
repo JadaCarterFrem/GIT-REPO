@@ -1,11 +1,21 @@
-
 // Display a message in the browser console
 console.log("Welcome to Bloom by Jada!");
 
 document.addEventListener("DOMContentLoaded", function () {
-    if (!sessionStorage.getItem("alertShown")) {
-        alert("Welcome to Bloom by Jada!");
-        sessionStorage.setItem("alertShown", "true");
+    // Check if the name is already saved in localStorage
+    let userName = localStorage.getItem("userName");
+
+    // If the name is not saved, ask for it
+    if (!userName) {
+        userName = prompt("Welcome to Bloom by Jada! What's your name?");
+        if (userName) {
+            localStorage.setItem("userName", userName);
+        }
+    }
+
+    // Display a personalized greeting
+    if (userName) {
+        alert(`Welcome back, ${userName}!`);
     }
 
     // Available themes
@@ -19,13 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
         applyTheme(savedTheme);
     }
 
-    // Ensure prompt appears at least once per session
+    // Ensure prompt appears at least once per session for theme
     if (!sessionStorage.getItem("themePromptShown")) {
         let userChoice = "";
 
         // Keep asking until they enter a valid theme
         while (!themes.includes(userChoice)) {
-            userChoice = prompt("Welcome! Do you want Light mode, Dark mode, or Pastel mode? (Type 'light', 'dark', or 'pastel')")?.toLowerCase();
+            userChoice = prompt("Do you prefer Light mode, Dark mode, or Pastel mode? (Type 'light', 'dark', or 'pastel')")?.toLowerCase();
         }
 
         // Apply & Save theme
@@ -47,6 +57,7 @@ function applyTheme(theme) {
     // Save the preference in localStorage
     localStorage.setItem("theme", theme);
 }
+
 function changeTheme(theme) {
     if (!theme) return; 
 
@@ -55,6 +66,7 @@ function changeTheme(theme) {
 
     localStorage.setItem('theme', theme);
 }
+
 // Available themes
 const themes = ["light", "dark", "pastel"];
 
@@ -74,5 +86,3 @@ function toggleTheme() {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
 });
-
-
