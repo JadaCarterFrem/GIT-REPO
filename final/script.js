@@ -1,5 +1,3 @@
-
-
 // Function to get cookie by name
 function getCookie(name) {
     const cookies = document.cookie.split('; ');
@@ -23,24 +21,32 @@ console.log("Welcome to Bloom by Jada!");
 // Available themes
 const themes = ["light", "dark", "pastel"];
 
+// Display initial welcome message
+alert("Welcome to Bloom by Jada!");
+
 document.addEventListener("DOMContentLoaded", function () {
     let userName = getCookie("name");
+    let newName;
 
     if (!userName || (userName && userName.trim() === "")) {
         do {
-            userName = prompt("What's your name?");
-        } while (!userName || (userName && userName.trim() === ""));
-        setCookie("name", userName, 7);
-        alert(`Welcome, ${userName}!`);
-    } else if (!sessionStorage.getItem("welcomeShown")) {
-        alert(`Welcome back, ${userName}!`);
-        sessionStorage.setItem("welcomeShown", "true");
+            newName = prompt("What's your name?");
+        } while (!newName || (newName && newName.trim() === ""));
+        setCookie("name", newName, 7);
+        alert(`Welcome, ${newName}!`);
+    } else {
+        newName = prompt("What's your name?");
+        if (newName === userName) {
+            alert(`Welcome back, ${userName}!`);
+        } else {
+            setCookie("name", newName, 7);
+            alert(`Welcome, ${newName}!`);
+        }
     }
-    
 
     const welcomeMessage = document.getElementById("welcome-message");
-    if (welcomeMessage && userName) {
-        welcomeMessage.textContent = `Welcome back, ${userName}!`;
+    if (welcomeMessage && newName) {
+        welcomeMessage.textContent = `Welcome, ${newName}!`;
     }
 
     let savedTheme = localStorage.getItem("theme");
@@ -48,15 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (savedTheme && themes.includes(savedTheme)) {
         applyTheme(savedTheme);
     } else {
-        if (!sessionStorage.getItem("themePromptShown")) {
-            let userChoice = "";
-            while (!themes.includes(userChoice)) {
-                userChoice = (prompt("Welcome! Light, Dark, or Pastel mode? (Type 'light', 'dark', or 'pastel')") || "").toLowerCase();
-            }
-            applyTheme(userChoice);
-            localStorage.setItem("theme", userChoice);
-            sessionStorage.setItem("themePromptShown", "true");
+        let userChoice = "";
+        while (!themes.includes(userChoice)) {
+            userChoice = (prompt("Choose your theme: Light, Dark, or Pastel? (Type 'light', 'dark', or 'pastel')") || "").toLowerCase();
         }
+        applyTheme(userChoice);
+        localStorage.setItem("theme", userChoice);
     }
 
     const themeToggleButton = document.getElementById("theme-toggle");
