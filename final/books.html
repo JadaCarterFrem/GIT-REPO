@@ -7,21 +7,14 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Google Analytics (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-257QX05Y36"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-257QX05Y36"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'G-257QX05Y36');
-
-  <a href="about.html" onclick="gtag('event', 'nav_click', {
-  event_category: 'navigation',
-  event_label: 'About'
-});">About</a>
-
-</script>
-
+        gtag('config', 'G-257QX05Y36');
+    </script>
 </head>
 <body>
     <header>
@@ -32,43 +25,40 @@
         <a href="mindfulmedia.html">Mindful Media</a>
         <a href="books.html">Books</a>
         <a href="meditation.html">Meditation</a>
-        <a href="about.html">About</a>
+        <a href="about.html" onclick="gtag('event', 'link_click', {
+            event_category: 'navigation',
+            event_label: 'About Page'
+        });">About</a>
         <a href="contact.html">Contact</a>
         <a href="affiliate.html">Affiliates</a>
         <a href="gallery.html">Gallery</a>
     </nav>
 
     <section>
-        <p>The following are all books I’ve read throughout my healing and self-growth journey at all different stages of my life. They are a collection of my favorites and the ones that had the most impact and transformation on my mind, perspectives, and internal locus of control. My most recent read was "Breaking the Habit of Being Yourself", and I am currently re-reading “A New Earth” and starting “Braiding Sweetgrass.”</p>
-        <p>If you struggle with mental health or often feel suppressed by your own psyche, it may be worth exploring some of these books. While traditional self-help books can be insightful, from personal experience of feeling “stuck” for quite some time, what truly catalyzed my healing was engaging with philosophy and spirituality. You don’t need to identify as a spiritual person to benefit from new perspectives, and the following books offer an excellent starting point: For some, these books can be incredibly transformative and become anchors to resort back to, when you find yourself stuck in a negative loop.</p>
+        <p>The following are all books I’ve read throughout my healing and self-growth journey...</p>
         <ul>
-            <li><b>The Four Agreements by Don Miguel Ruiz-</b>  If you need a foundation</li>
-            <li><b>The Power of Now by Eckhart Tolle-</b> Perspective shift, Tolle wisdom</li>
-            <li><b>A New Earth by Eckhart Tolle-</b> Tolle wisdom pt. 2</li>
-            <li><b>The Untethered Soul by Michael Alan Singer-</b> Free therapy and a slap in the face</li>
-            <li><b>Breaking The Habit of Being Yourself by Dr. Joe Dispenza-</b> Life reset and transformation</li>
-            <li><b>Braiding Sweetgrass by Robin Wall Kimmerer-</b> Indigenous wisdom, hug a tree</li>
-       <p>Our value is in our perspective, and sometimes the catalyst to change begins with a single perspective shift. Whether you seek a foundational guide or a confrontation with your psyche, these books offer pathways to growth, change, greater awareness and peace. :)</p>
+            <li><b>The Four Agreements by Don Miguel Ruiz</b> - If you need a foundation</li>
+            <li><b>The Power of Now by Eckhart Tolle</b> - Perspective shift, Tolle wisdom</li>
+            <li><b>A New Earth by Eckhart Tolle</b> - Tolle wisdom pt. 2</li>
+            <li><b>The Untethered Soul by Michael Alan Singer</b> - Free therapy and a slap in the face</li>
+            <li><b>Breaking The Habit of Being Yourself by Dr. Joe Dispenza</b> - Life reset and transformation</li>
+            <li><b>Braiding Sweetgrass by Robin Wall Kimmerer</b> - Indigenous wisdom, hug a tree</li>
         </ul>
+        <p>Our value is in our perspective, and sometimes the catalyst to change begins with a single perspective shift...</p>
 
         <!-- Explore More Books Button -->
-<button class="explore-button" onclick="window.open('https://www.amazon.com/hz/wishlist/ls/1PI891D728ZPR?ref_=wl_share', '_blank');">
-    Explore More Books!
-</button>
-
+        <button class="explore-button" onclick="gtag('event', 'button_click', {
+            event_category: 'link',
+            event_label: 'Amazon Wishlist'
+        }); window.open('https://www.amazon.com/hz/wishlist/ls/1PI891D728ZPR?ref_=wl_share', '_blank');">
+            Explore More Books!
+        </button>
     </section>
-
-
 
     <img src="images/unsplashrocks.jpg" alt="pretty flower" class="styled-image">
 
-
-    <script src="script.js"></script>
-    
-
     <script src="script.js"></script>
     <button id="theme-toggle" class="theme-button">Toggle Theme</button>
-
 
 </body>
 </html>
