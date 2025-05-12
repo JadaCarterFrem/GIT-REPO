@@ -21,8 +21,11 @@ console.log("Welcome to Bloom by Jada!");
 // Available themes
 const themes = ["light", "dark", "pastel"];
 
-// Display initial welcome message
-alert("Welcome to Bloom by Jada!");
+// Display initial welcome message only once per session
+if (!sessionStorage.getItem("initialWelcomeShown")) {
+    alert("Welcome to Bloom by Jada!");
+    sessionStorage.setItem("initialWelcomeShown", "true");
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     let userName = getCookie("name");
