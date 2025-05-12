@@ -62,12 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("theme", userChoice);
     }
 
-    let bgColor = localStorage.getItem("bgColor");
-    if (!bgColor) {
-        bgColor = prompt("Choose a background color (e.g., #ffffff for white):");
-        localStorage.setItem("bgColor", bgColor);
-    }
-    document.body.style.backgroundColor = bgColor;
 
     const themeToggleButton = document.getElementById("theme-toggle");
     if (themeToggleButton) {
@@ -81,11 +75,4 @@ function applyTheme(theme) {
     document.body.classList.remove("light-mode", "dark-mode", "pastel-mode");
     document.body.classList.add(`${theme}-mode`);
     localStorage.setItem("theme", theme);
-}
-
-// Toggle theme function
-function toggleTheme() {
-    let currentTheme = localStorage.getItem("theme") || "light";
-    let nextTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];
-    applyTheme(nextTheme);
 }
