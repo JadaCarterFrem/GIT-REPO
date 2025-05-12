@@ -62,6 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("theme", userChoice);
     }
 
+    let bgColor = localStorage.getItem("bgColor");
+    if (!bgColor) {
+        bgColor = prompt("Choose a background color (e.g., #ffffff for white):");
+        localStorage.setItem("bgColor", bgColor);
+    }
+    document.body.style.backgroundColor = bgColor;
+
     const themeToggleButton = document.getElementById("theme-toggle");
     if (themeToggleButton) {
         themeToggleButton.addEventListener("click", toggleTheme);
