@@ -1,3 +1,5 @@
+
+
 // Function to get cookie by name
 function getCookie(name) {
     const cookies = document.cookie.split('; ');
@@ -30,9 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
         } while (!userName || (userName && userName.trim() === ""));
         setCookie("name", userName, 7);
         alert(`Welcome, ${userName}!`);
-    } else {
+    } else if (!sessionStorage.getItem("welcomeShown")) {
         alert(`Welcome back, ${userName}!`);
+        sessionStorage.setItem("welcomeShown", "true");
     }
+    
 
     const welcomeMessage = document.getElementById("welcome-message");
     if (welcomeMessage && userName) {
