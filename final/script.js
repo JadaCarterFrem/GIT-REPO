@@ -1,3 +1,4 @@
+<script>
 // Function to get cookie by name
 function getCookie(name) {
     const cookies = document.cookie.split('; ');
@@ -18,19 +19,24 @@ function setCookie(name, value, days) {
 // Display a message in the browser console
 console.log("Welcome to Bloom by Jada!");
 
-document.addEventListener("DOMContentLoaded", function () {
-    if (!sessionStorage.getItem("alertShown")) {
-        alert("Welcome to Bloom by Jada!");
-        sessionStorage.setItem("alertShown", "true");
-    }
+// Available themes (defined only once)
+const themes = ["light", "dark", "pastel"];
 
+document.addEventListener("DOMContentLoaded", function () {
     // Check if a name is already saved in cookies
     let userName = getCookie("name");
 
-    // If no name is stored, ask the user for their name and save it to cookies
-    if (!userName) {
-        userName = prompt("What's your name?");
+    // If no name is stored, prompt the user and validate input
+    if (!userName || userName.trim() === "") {
+        do {
+            userName = prompt("What's your name?");
+        } while (!userName || userName.trim() === "");
+        
         setCookie("name", userName, 7); // Save the name in cookies for 7 days
+        alert(`Welcome, ${userName}!`);
+    } else {
+        // Greet the returning user
+        alert(`Welcome back, ${userName}!`);
     }
 
     // Display a personalized welcome message
@@ -39,30 +45,23 @@ document.addEventListener("DOMContentLoaded", function () {
         welcomeMessage.textContent = `Welcome back, ${userName}!`;
     }
 
-    // Available themes
-    const themes = ["light", "dark", "pastel"];  // Added 'pastel' as a third option
-
     // Check if a theme is already saved in localStorage
     let savedTheme = localStorage.getItem("theme");
 
-    // Apply saved theme if it exists
+    // Apply saved theme if it exists and is valid
     if (savedTheme && themes.includes(savedTheme)) {
         applyTheme(savedTheme);
-    }
-
-    // Ensure prompt appears at least once per session
-    if (!sessionStorage.getItem("themePromptShown")) {
-        let userChoice = "";
-
-        // Keep asking until they enter a valid theme
-        while (!themes.includes(userChoice)) {
-            userChoice = prompt("Welcome! Do you want Light mode, Dark mode, or Pastel mode? (Type 'light', 'dark', or 'pastel')")?.toLowerCase();
+    } else {
+        // Ensure prompt appears at least once per session for theme selection
+        if (!sessionStorage.getItem("themePromptShown")) {
+            let userChoice = "";
+            while (!themes.includes(userChoice)) {
+                userChoice = prompt("Welcome! Do you want Light mode, Dark mode, or Pastel mode? (Type 'light', 'dark', or 'pastel')")?.toLowerCase();
+            }
+            applyTheme(userChoice);
+            localStorage.setItem("theme", userChoice); // Save theme to localStorage
+            sessionStorage.setItem("themePromptShown", "true"); // Prevent repeat prompts within a session
         }
-
-        // Apply & Save theme in localStorage
-        applyTheme(userChoice);
-        localStorage.setItem("theme", userChoice); // Save theme to localStorage
-        sessionStorage.setItem("themePromptShown", "true"); // Prevents repeat prompts within a session
     }
 });
 
@@ -81,21 +80,18 @@ function applyTheme(theme) {
 }
 
 function changeTheme(theme) {
-    if (!theme) return; 
+    if (!theme) return;
 
-    document.body.classList.remove("light-mode", "dark-mode", "pastel-mode"); 
-    document.body.classList.add(`${theme}-mode`);  
+    document.body.classList.remove("light-mode", "dark-mode", "pastel-mode");
+    document.body.classList.add(`${theme}-mode`);
 
-    localStorage.setItem('theme', theme); // Save theme in localStorage
+    localStorage.setItem("theme", theme); // Save theme in localStorage
 }
-
-// Available themes
-const themes = ["light", "dark", "pastel"];
 
 // Function to toggle themes in order
 function toggleTheme() {
     // Get the current theme from localStorage
-    let currentTheme = localStorage.getItem("theme") || "light"; 
+    let currentTheme = localStorage.getItem("theme") || "light";
 
     // Find the next theme in the array
     let nextTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];
@@ -104,7 +100,11 @@ function toggleTheme() {
     applyTheme(nextTheme);
 }
 
-// Attach toggle function to a button (Make sure the button exists in your HTML)
+// Attach toggle function to a button if it exists
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
+    const themeToggleButton = document.getElementById("theme-toggle");
+    if (themeToggleButton) {
+        themeToggleButton.addEventListener("click", toggleTheme);
+    }
 });
+</script>
