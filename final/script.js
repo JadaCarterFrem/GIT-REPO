@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setCookie("name", newName, 7);
         alert(`Welcome, ${newName}!`);
     } else if (!sessionStorage.getItem("welcomeShown")) {
+        // Only show the "Welcome back" alert if it hasn't been shown in this session
         alert(`Welcome back, ${userName}!`);
         sessionStorage.setItem("welcomeShown", "true");
     }
