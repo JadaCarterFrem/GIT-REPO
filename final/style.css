@@ -1,3 +1,6 @@
+
+
+
 /* Default light mode styles */
 body {
     font-family: 'Arial', sans-serif;
@@ -10,12 +13,16 @@ body {
     box-sizing: border-box;
 }
 
+
 /* DARK MODE STYLING */
+
+/* Dark mode styles (will be applied via JavaScript) */
 .dark-mode {
     background-color: #333;
     color: white;
 }
 
+/* Default page heading color for light mode */
 header h1 {
     color: #903e99;
 }
@@ -23,16 +30,19 @@ header {
     color: #903e99;
 }
 
+/* Ensure dark mode overrides the heading color */
 .dark-mode header h1 {
-    color: white;
+    color: white; /* Keeps readability in dark mode */
 }
 .dark-mode header {
-    color: white;
+    color: white; /* Keeps readability in dark mode */
 }
 
+/* Dark mode styling for header p */
 .dark-mode header p {
     color: #f8eef9;
 }
+/* Dark mode link color */
 .dark-mode a {
     color: white;
 }
@@ -43,26 +53,32 @@ header {
 
 .dark-mode a:hover,
 .dark-mode a:active {
-    color: #ccc;
+    color: #ccc; /* Slightly lighter for hover/active state */
 }
 
+
+
+/* Pastel Mode Styles */
 .pastel-mode {
-    background-color: #f8e1f4;
-    color: #333;
+    background-color: #f8e1f4;  /* Soft pastel pink */
+    color: #333;  /* Dark text for contrast */
 }
 
+/* Ensure headers and other elements adapt to pastel mode */
 .pastel-mode header h1 {
-    color: #d973a1;
+    color: #d973a1; /* A complementary pastel color for headers */
 }
 
 .pastel-mode nav {
-    background-color: #ffc6d9;
+    background-color: #ffc6d9; /* Light pastel pink for nav */
 }
 
 .pastel-mode footer {
-    background-color: #f0d9ff;
+    background-color: #f0d9ff; /* Soft lavender footer */
 }
 
+
+/* Navigation Bar */
 nav {
     display: flex;
     justify-content: center;
@@ -73,63 +89,244 @@ nav {
     top: 0;
     left: 0;
     z-index: 100;
+    transition: background-color 0.5s;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
+/* Ensure nav items don't overflow on small screens */
 nav ul {
     display: flex;
+    padding: 0;
+    margin: 0;
     list-style: none;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
+/* Reduce spacing between items */
 nav ul li {
     margin: 0 8px;
 }
 
-.home-page header h1 {
-    font-size: clamp(4.5rem, 13vw, 7.5rem);
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    font-size: 14px;
 }
 
-.alternate-page header h1 {
-    font-size: clamp(2.5rem, 10vw, 4.5rem);
+/* Header Styling */
+header {
+    margin-top: 80px; /* Adjust for fixed nav bar */
+    text-align: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
-
 header p {
-    font-size: 1.5rem;
-    color: #4f6d7a;
+    display: block;
+    text-align: center;
+    width: 100%; 
+    
+}
+    
+
+/* Home Page Header - Larger */
+.home-page header h1 {
+    font-size: clamp(4rem, 12vw, 7rem); /* Bigger size for homepage */
+    color: #ff97c2;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.theme-button, .explore-button {
+/* Smaller header on alternate pages */
+.alternate-page header h1 {
+    font-size: clamp(2rem, 9vw, 4rem); /* Dynamically scales */
+}
+
+/* Make the tagline centered and smaller */
+
+    header p {
+        font-size: 1.5rem;
+        color: #4f6d7a;
+        margin-top: 10px;
+        text-align: center;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+
+/* Theme Toggle Button */
+.theme-button {
+    margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #f4b6e1;
+    color: #333;
+    transition: background-color 0.3s;
 }
 
+.theme-button:hover {
+    background-color: #d58aaf;
+}
+
+/* Explore More Books Button */
+.explore-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #a0d8ef; /* Pastel blue */
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+    background-color: #79bfe3; /* Slightly darker pastel blue */
+}
+
+
+
+/* Footer Styling */
 footer {
     background-color: #e1d0f0;
     color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 10px;
 }
 
+/* Adjust image size and centering */
+.styled-image {
+    width: min(25vw, 300px);
+    display: block;
+    margin: 20px auto;
+}
+
+.image-caption {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+}
+
+
+/* Media Queries */
+
+/* Phones (max-width: 480px) */
 @media (max-width: 480px) {
-    .home-page header h1 {
-        font-size: clamp(3.5rem, 15vw, 5.5rem);
+    header {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
     }
+ 
+    .home-page header h1 {
+        font-size: clamp(3rem, 14vw, 5rem);
+        max-width: 90%;
+    }
+
     .alternate-page header h1 {
-        font-size: clamp(2.5rem, 10vw, 3.5rem);
+        font-size: clamp(2rem, 9vw, 3rem);
+        max-width: 90%;
+    }
+
+    header p {
+        font-size: clamp(1rem, 6vw, 6vw);
+        max-width: 90%;
     }
 }
 
+/* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
-    .home-page header h1 {
-        font-size: clamp(3.5rem, 11vw, 6.5rem);
+    .styled-image {
+        width: 75%;
+        max-width: 250px;
     }
+
+    .home-page header h1 {
+        font-size: clamp(3rem, 10vw, 6rem);
+        max-width: 80%;
+    }
+
     .alternate-page header h1 {
-        font-size: clamp(2.5rem, 9vw, 4rem);
+        font-size: clamp(2rem, 8vw, 3.5rem);
+        max-width: 80%;
+    }
+    
+    header p {
+        text-align: center;
+        width: 100%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}
+
+/* Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .styled-image {
+        width: 60%;
+        max-width: 280px;
+    }
+
+    .home-page header h1 {
+        font-size: clamp(4rem, 11vw, 6rem);
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    .alternate-page header h1 {
+        font-size: clamp(2.5rem, 7vw, 3.5rem);
+        max-width: 70%;
+    }
+    header p {
+        display: block;
+        text-align: center;
+        width: 100%; 
     }
 }
 
-@media (max-width: 1024px) {
-    .home-page header h1 {
-        font-size: clamp(4.5rem, 12vw, 6.5rem);
+/* Media Query: Adjust navbar for mobile screens */
+@media (max-width: 480px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px;
     }
-    .alternate-page header h1 {
-        font-size: clamp(3rem, 8vw, 4rem);
+
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 6px 10px;
     }
 }
+
